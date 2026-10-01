@@ -3,19 +3,19 @@
   "section": "Wrap-up",
   "section_idx": 9,
   "sections_total": 10,
-  "xp_total": 120,
-  "active_minutes": 10,
+  "xp_total": 180,
+  "active_minutes": 12,
   "quiz_answered": 12,
   "quiz_correct": 12,
   "labs_self_reported": {
-    "labA": false,
-    "labB": false,
-    "labC": false
+    "labA": true,
+    "labB": true,
+    "labC": true
   },
   "participant": {
     "name": "Anil",
     "github_user": "askanilkumar",
     "team": "A"
   },
-  "updated_at": "2026-10-01T03:33:12.134776+00:00"
+  "updated_at": "2026-10-01T03:35:26.003296+00:00"
 }

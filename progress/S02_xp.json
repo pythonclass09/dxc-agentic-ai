@@ -1,12 +1,12 @@
 {
   "session": "S02",
-  "timestamp": "2026-10-01T03:33:23.582Z",
+  "timestamp": "2026-10-01T03:35:31.276Z",
   "participant": {
     "name": "Anil",
     "github_user": "askanilkumar",
     "team": "A"
   },
-  "xp_total": 120,
+  "xp_total": 180,
   "xp": {
     "q_boss_0": 5,
     "q_boss_1": 5,
@@ -19,9 +19,12 @@
     "q_boss_8": 15,
     "q_boss_9": 15,
     "q_boss_10": 15,
-    "q_boss_11": 15
+    "q_boss_11": 15,
+    "done_labA": 20,
+    "done_labB": 20,
+    "done_labC": 20
   },
-  "active_minutes": 10,
+  "active_minutes": 12,
   "quiz": {
     "boss_0": {
       "correct": true,
@@ -78,10 +81,10 @@
     "of": 12
   },
   "labs_self_reported": {
-    "labA": false,
-    "labB": false,
-    "labC": false
+    "labA": true,
+    "labB": true,
+    "labC": true
   },
   "exit_ticket": {},
-  "saved_at": "2026-10-01T03:33:23.593582+00:00"
+  "saved_at": "2026-10-01T03:35:31.285712+00:00"
 }
