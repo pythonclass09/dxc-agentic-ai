@@ -1,0 +1,21 @@
+{
+  "session": "S02",
+  "section": "Wrap-up",
+  "section_idx": 9,
+  "sections_total": 10,
+  "xp_total": 120,
+  "active_minutes": 10,
+  "quiz_answered": 12,
+  "quiz_correct": 12,
+  "labs_self_reported": {
+    "labA": false,
+    "labB": false,
+    "labC": false
+  },
+  "participant": {
+    "name": "Anil",
+    "github_user": "askanilkumar",
+    "team": "A"
+  },
+  "updated_at": "2026-10-01T03:33:12.134776+00:00"
+}

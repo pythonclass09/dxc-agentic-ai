@@ -1,0 +1,26 @@
+{
+  "session": "S02",
+  "participant": {
+    "name": "Anil",
+    "github_user": "askanilkumar",
+    "team": "A"
+  },
+  "saved_at": "2026-10-01T03:33:23.593582+00:00",
+  "labs": {
+    "lab02-naive-rag": {
+      "passed": [],
+      "failed": [
+        "test_challenge_1_embed",
+        "test_challenge_2_cosine",
+        "test_challenge_3_top_k",
+        "test_challenge_4_chunking",
+        "test_challenge_5_build_index",
+        "test_challenge_6_search",
+        "test_challenge_7_rag_prompt",
+        "test_challenge_8_answer_with_rag",
+        "test_challenge_9_results_show_grounding"
+      ],
+      "total": 9
+    }
+  }
+}
