@@ -1,0 +1,164 @@
+{
+  "session": "S01",
+  "timestamp": "2026-10-01T04:52:38.112Z",
+  "participant": {
+    "name": "Anil",
+    "github_user": "askanilkumar",
+    "team": "A"
+  },
+  "xp_total": 312,
+  "xp": {
+    "cls1": 10,
+    "q_m1_0": 5,
+    "q_m1_1": 5,
+    "q_m1_2": 10,
+    "done_labA": 20,
+    "q_pick_0": 5,
+    "q_pick_1": 5,
+    "q_pick_2": 10,
+    "q_pick_3": 10,
+    "q_pick_4": 15,
+    "q_m2_0": 5,
+    "q_m2_1": 10,
+    "done_labB": 20,
+    "sampgo": 2,
+    "q_m3_0": 5,
+    "q_m3_1": 10,
+    "q_m3_2": 10,
+    "q_m3_3": 15,
+    "done_labC": 20,
+    "q_boss_0": 5,
+    "q_boss_1": 5,
+    "q_boss_2": 5,
+    "q_boss_3": 5,
+    "q_boss_4": 10,
+    "q_boss_5": 10,
+    "q_boss_6": 10,
+    "q_boss_7": 10,
+    "q_boss_8": 15,
+    "q_boss_11": 15,
+    "q_boss_10": 15,
+    "q_boss_9": 15
+  },
+  "active_minutes": 24,
+  "quiz": {
+    "m1_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "m1_1": {
+      "correct": true,
+      "level": "b"
+    },
+    "m1_2": {
+      "correct": true,
+      "level": "i"
+    },
+    "pick_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "pick_1": {
+      "correct": true,
+      "level": "b"
+    },
+    "pick_2": {
+      "correct": true,
+      "level": "i"
+    },
+    "pick_3": {
+      "correct": true,
+      "level": "i"
+    },
+    "pick_4": {
+      "correct": true,
+      "level": "a"
+    },
+    "m2_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "m2_1": {
+      "correct": true,
+      "level": "i"
+    },
+    "m3_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "m3_1": {
+      "correct": true,
+      "level": "i"
+    },
+    "m3_2": {
+      "correct": true,
+      "level": "i"
+    },
+    "m3_3": {
+      "correct": true,
+      "level": "a"
+    },
+    "boss_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "boss_1": {
+      "correct": true,
+      "level": "b"
+    },
+    "boss_2": {
+      "correct": true,
+      "level": "b"
+    },
+    "boss_3": {
+      "correct": true,
+      "level": "b"
+    },
+    "boss_4": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_5": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_6": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_7": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_8": {
+      "correct": true,
+      "level": "a"
+    },
+    "boss_11": {
+      "correct": true,
+      "level": "a"
+    },
+    "boss_10": {
+      "correct": true,
+      "level": "a"
+    },
+    "boss_9": {
+      "correct": true,
+      "level": "a"
+    }
+  },
+  "boss": {
+    "answered": 12,
+    "correct": 12,
+    "of": 12
+  },
+  "labs_self_reported": {
+    "labA": true,
+    "labB": true,
+    "labC": true
+  },
+  "exit_ticket": {
+    "confidence": 5
+  },
+  "saved_at": "2026-10-01T04:52:38.123074+00:00"
+}
