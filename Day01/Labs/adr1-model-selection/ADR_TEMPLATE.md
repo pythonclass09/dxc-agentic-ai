@@ -4,7 +4,7 @@
 |---|---|
 | **Version** | v1 *(change to v2 in the second file)* |
 | **Status** | Proposed |
-| **Author** | *your name* · Team *x* |
+| **Author** | *Gowthami* · Team *x* |
 | **Date** | *today* |
 
 > **What changed and why** *(v2 only — delete this box in v1)*

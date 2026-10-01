@@ -1,6 +1,6 @@
 {
   "session": "S01",
-  "timestamp": "2026-10-01T04:52:38.112Z",
+  "timestamp": "2026-10-01T07:21:55.668Z",
   "participant": {
     "name": "Anil",
     "github_user": "askanilkumar",
@@ -40,7 +40,7 @@
     "q_boss_10": 15,
     "q_boss_9": 15
   },
-  "active_minutes": 24,
+  "active_minutes": 29,
   "quiz": {
     "m1_0": {
       "correct": true,
@@ -160,5 +160,5 @@
   "exit_ticket": {
     "confidence": 5
   },
-  "saved_at": "2026-10-01T04:52:38.123074+00:00"
+  "saved_at": "2026-10-01T07:21:55.678144+00:00"
 }
