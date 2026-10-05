@@ -1,21 +1,17 @@
 {
   "session": "S01",
-  "section": "Lab A",
-  "section_idx": 2,
+  "section": "Lab C",
+  "section_idx": 6,
   "sections_total": 9,
-  "xp_total": 312,
-  "active_minutes": 29,
-  "quiz_answered": 26,
-  "quiz_correct": 26,
+  "xp_total": 149,
+  "active_minutes": 14,
+  "quiz_answered": 13,
+  "quiz_correct": 13,
   "labs_self_reported": {
-    "labA": true,
+    "labA": false,
     "labB": true,
-    "labC": true
+    "labC": false
   },
-  "participant": {
-    "name": "Anil",
-    "github_user": "askanilkumar",
-    "team": "A"
-  },
-  "updated_at": "2026-10-01T12:46:56.998267+00:00"
+  "participant": null,
+  "updated_at": "2026-10-05T03:31:16.192962+00:00"
 }
