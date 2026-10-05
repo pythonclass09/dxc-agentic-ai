@@ -1,27 +1,29 @@
 {
   "session": "S01",
-  "timestamp": "2026-10-01T07:21:55.668Z",
+  "timestamp": "2026-10-05T03:39:53.483Z",
   "participant": {
-    "name": "Anil",
-    "github_user": "askanilkumar",
-    "team": "A"
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
   },
-  "xp_total": 312,
+  "xp_total": 289,
   "xp": {
+    "flip_0": 1,
+    "flip_1": 1,
+    "flip_2": 1,
     "cls1": 10,
     "q_m1_0": 5,
     "q_m1_1": 5,
     "q_m1_2": 10,
-    "done_labA": 20,
     "q_pick_0": 5,
     "q_pick_1": 5,
     "q_pick_2": 10,
     "q_pick_3": 10,
     "q_pick_4": 15,
     "q_m2_0": 5,
-    "q_m2_1": 10,
     "done_labB": 20,
-    "sampgo": 2,
+    "samp": 3,
+    "ctx": 3,
     "q_m3_0": 5,
     "q_m3_1": 10,
     "q_m3_2": 10,
@@ -36,11 +38,11 @@
     "q_boss_6": 10,
     "q_boss_7": 10,
     "q_boss_8": 15,
-    "q_boss_11": 15,
+    "q_boss_9": 15,
     "q_boss_10": 15,
-    "q_boss_9": 15
+    "q_boss_11": 15
   },
-  "active_minutes": 29,
+  "active_minutes": 19,
   "quiz": {
     "m1_0": {
       "correct": true,
@@ -77,10 +79,6 @@
     "m2_0": {
       "correct": true,
       "level": "b"
-    },
-    "m2_1": {
-      "correct": true,
-      "level": "i"
     },
     "m3_0": {
       "correct": true,
@@ -134,7 +132,7 @@
       "correct": true,
       "level": "a"
     },
-    "boss_11": {
+    "boss_9": {
       "correct": true,
       "level": "a"
     },
@@ -142,7 +140,7 @@
       "correct": true,
       "level": "a"
     },
-    "boss_9": {
+    "boss_11": {
       "correct": true,
       "level": "a"
     }
@@ -153,12 +151,10 @@
     "of": 12
   },
   "labs_self_reported": {
-    "labA": true,
+    "labA": false,
     "labB": true,
     "labC": true
   },
-  "exit_ticket": {
-    "confidence": 5
-  },
-  "saved_at": "2026-10-01T07:21:55.678144+00:00"
+  "exit_ticket": {},
+  "saved_at": "2026-10-05T03:39:53.493164+00:00"
 }

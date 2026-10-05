@@ -1,17 +1,18 @@
 {
   "session": "S01",
   "participant": {
-    "name": "Anil",
-    "github_user": "askanilkumar",
-    "team": "A"
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
   },
-  "saved_at": "2026-10-01T07:21:55.678144+00:00",
+  "saved_at": "2026-10-05T03:39:53.493164+00:00",
   "labs": {
     "lab01-hello-llm": {
-      "passed": [],
-      "failed": [
+      "passed": [
         "test_challenge_1_converse_call",
-        "test_challenge_2_tokens_and_latency",
+        "test_challenge_2_tokens_and_latency"
+      ],
+      "failed": [
         "test_challenge_3_model_shootout",
         "test_challenge_4_ticket_schema",
         "test_challenge_5_structured_extraction"

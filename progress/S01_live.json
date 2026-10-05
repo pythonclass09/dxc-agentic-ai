@@ -1,17 +1,21 @@
 {
   "session": "S01",
-  "section": "Wrap-up",
-  "section_idx": 8,
+  "section": "\u2461 Models",
+  "section_idx": 3,
   "sections_total": 9,
-  "xp_total": 289,
-  "active_minutes": 19,
-  "quiz_answered": 25,
-  "quiz_correct": 25,
+  "xp_total": 33,
+  "active_minutes": 10,
+  "quiz_answered": 3,
+  "quiz_correct": 3,
   "labs_self_reported": {
     "labA": false,
-    "labB": true,
-    "labC": true
+    "labB": false,
+    "labC": false
   },
-  "participant": null,
-  "updated_at": "2026-10-05T03:36:16.188036+00:00"
+  "participant": {
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
+  },
+  "updated_at": "2026-10-05T03:39:36.254410+00:00"
 }
