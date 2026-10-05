@@ -24,6 +24,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))  # lets us import askit_core
 from askit_core import bedrock, config, data  # noqa: E402
 from askit_core.rag import embed_text  # noqa: E402  (ready-made Titan embedding - same as your Part A)
+from lab02a_embeddings import cosine  # noqa: E402
 
 HERE = Path(__file__).parent
 RESULTS_FILE = HERE / "submission" / "lab02b_results.json"
@@ -43,7 +44,22 @@ def chunk_text(text, size=80, overlap=20):
     # SKELETON:  words = ___ ;  step = ___ ;  loop start = 0, step, 2*step ...
     # Example: 100 words, size=40, overlap=10 -> chunk 1 starts at word 0,
     #        chunk 2 starts at word ____ (predict, then check with the test)
-    raise NotImplementedError("TODO-4")
+    words = text.split()
+    if not words:
+        return []
+    step = size - overlap
+    if step <= 0:
+        return [text]
+
+    chunks = []
+    for start in range(0, len(words), step):
+        chunk = words[start:start + size]
+        if not chunk:
+            break
+        chunks.append(" ".join(chunk))
+        if start + size >= len(words):
+            break
+    return chunks
 
 
 def build_index(client, docs, size=80, overlap=20):
@@ -56,7 +72,16 @@ def build_index(client, docs, size=80, overlap=20):
     #        dict with keys id, doc_id, text, vector. The id is "<doc_id>#<number>".
     #        The vector comes from embed_text(client, piece).
     # My prediction: with 20 articles, will there be fewer or more than 20 chunks? ____
-    raise NotImplementedError("TODO-5")
+    index = []
+    for doc_id, text in docs.items():
+        for n, chunk in enumerate(chunk_text(text, size=size, overlap=overlap)):
+            index.append({
+                "id": f"{doc_id}#{n}",
+                "doc_id": doc_id,
+                "text": chunk,
+                "vector": embed_text(client, chunk),
+            })
+    return index
 
 
 def search(client, index, query, k=3):
@@ -69,7 +94,17 @@ def search(client, index, query, k=3):
     #        (3) sort highest first, keep k, return {"id","doc_id","text","score"}
     #            (leave the long vector out of the result)
     # My prediction: what hit rate @3 will you get? ____ %  (you will see it on run)
-    raise NotImplementedError("TODO-6")
+    query_vec = embed_text(client, query)
+    scored = []
+    for item in index:
+        scored.append({
+            "id": item["id"],
+            "doc_id": item["doc_id"],
+            "text": item["text"],
+            "score": cosine(query_vec, item["vector"]),
+        })
+    scored.sort(key=lambda entry: entry["score"], reverse=True)
+    return scored[:k]
 
 
 def main():
