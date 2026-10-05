@@ -1,14 +1,14 @@
 {
   "session": "S03",
-  "section": "Welcome",
-  "section_idx": 0,
+  "section": "Lab 2A",
+  "section_idx": 2,
   "sections_total": 10,
-  "xp_total": 6,
-  "active_minutes": 0,
-  "quiz_answered": 0,
-  "quiz_correct": 0,
+  "xp_total": 47,
+  "active_minutes": 3,
+  "quiz_answered": 4,
+  "quiz_correct": 4,
   "labs_self_reported": {
-    "lab2a": false,
+    "lab2a": true,
     "lab2b": false,
     "lab2c": false
   },
@@ -17,5 +17,5 @@
     "github_user": "pythonclass09",
     "team": "D"
   },
-  "updated_at": "2026-10-05T03:50:48.256270+00:00"
+  "updated_at": "2026-10-05T03:51:04.045858+00:00"
 }
