@@ -29,7 +29,13 @@ def build_rag_prompt(question, hits):
     #               if the answer is not in the context reply exactly: IDK  (the constant above)
     #   3. QUESTION: the question
     #   Return it as one string (an f-string or "\n".join([...]) both work).
-    raise NotImplementedError("TODO-7")
+    context = [f"[{hit['doc_id']}] {hit['text']}" for hit in hits]
+    rules = [
+        "Answer ONLY using the context above.",
+        "Cite the [KB-xxx] IDs you used in your answer.",
+        f"If the answer is not in the context, reply exactly: {IDK}",
+    ]
+    return "\n\n".join(["Context:", *context, "Rules:", *rules, "Question:", question])
 
 
 def ask_model(client, model_id, prompt):
@@ -45,7 +51,9 @@ def answer_with_rag(client, model_id, index, question, k=3):
     #   hits = index.search(client, question, k=k)
     #   prompt = build_rag_prompt(question, hits)
     #   return {"answer": ask_model(client, model_id, prompt), "sources": [h["doc_id"] for h in hits]}
-    raise NotImplementedError("TODO-8")
+    hits = index.search(client, question, k=k)
+    prompt = build_rag_prompt(question, hits)
+    return {"answer": ask_model(client, model_id, prompt), "sources": [h["doc_id"] for h in hits]}
 
 
 def get_index(client):
