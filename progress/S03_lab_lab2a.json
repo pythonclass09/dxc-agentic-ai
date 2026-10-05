@@ -1,0 +1,34 @@
+{
+  "session": "S03",
+  "lab": "lab2a",
+  "title": "Lab 2A",
+  "folder": "lab02-naive-rag",
+  "participant": {
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
+  },
+  "submitted_at": "2026-10-05T03:50:57.768475+00:00",
+  "attempts": 1,
+  "passed": [],
+  "failed": [
+    {
+      "name": "test_challenge_1_embed",
+      "msg": "NotImplementedError: TODO-1"
+    },
+    {
+      "name": "test_challenge_2_cosine",
+      "msg": "NotImplementedError: TODO-2"
+    },
+    {
+      "name": "test_challenge_3_top_k",
+      "msg": "NotImplementedError: TODO-3"
+    }
+  ],
+  "total": 3,
+  "stretch": null,
+  "evidence": {
+    "files": {},
+    "eval_runs": []
+  }
+}
