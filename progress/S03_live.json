@@ -3,13 +3,13 @@
   "section": "Lab 2A",
   "section_idx": 2,
   "sections_total": 10,
-  "xp_total": 258,
+  "xp_total": 263,
   "active_minutes": 41,
   "quiz_answered": 20,
   "quiz_correct": 20,
   "labs_self_reported": {
     "lab2a": true,
-    "lab2b": false,
+    "lab2b": true,
     "lab2c": false
   },
   "participant": {
@@ -17,5 +17,5 @@
     "github_user": "pythonclass09",
     "team": "D"
   },
-  "updated_at": "2026-10-05T05:22:00.040903+00:00"
+  "updated_at": "2026-10-05T05:22:10.936693+00:00"
 }
