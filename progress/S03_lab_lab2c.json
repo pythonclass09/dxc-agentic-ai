@@ -1,0 +1,37 @@
+{
+  "session": "S03",
+  "lab": "lab2c",
+  "title": "Lab 2C",
+  "folder": "lab02-askit-rag-app",
+  "participant": {
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
+  },
+  "submitted_at": "2026-10-05T05:36:28.386505+00:00",
+  "attempts": 1,
+  "passed": [
+    "test_kb_is_in_repo"
+  ],
+  "failed": [
+    {
+      "name": "test_experiment_numbers",
+      "msg": "AssertionError: Fill at least 3 rows of the table with your Mini eval results (replace the ?/10)"
+    },
+    {
+      "name": "test_experiment_conclusion",
+      "msg": "AssertionError: Write 1-2 sentences after 'What I learned' (replace TODO)"
+    }
+  ],
+  "total": 3,
+  "stretch": null,
+  "evidence": {
+    "files": {
+      "experiment.md": {
+        "modified": "2026-10-05T03:18:11.417909+00:00",
+        "text": "# Lab 2 Part C \u2014 chunking experiment\n\nRun the \ud83e\uddea Mini eval for each setting, then copy the numbers from **Your experiments**.\n\n| chunk size | overlap | top-K | doc hit | answer hit |\n|---|---|---|---|---|\n| 800 | 150 | 4 | ?/10 | ?/10 |\n| 300 | 100 | 4 | ?/10 | ?/10 |\n| 150 | 50 | 4 | ?/10 | ?/10 |\n| 800 | 150 | 2 | ?/10 | ?/10 |\n\n**What I learned (1\u20132 sentences):** TODO\n\n## \u2b50 Stretch: 3 questions this app answers badly\n1. TODO\n2. TODO\n3. TODO\n"
+      }
+    },
+    "eval_runs": []
+  }
+}
