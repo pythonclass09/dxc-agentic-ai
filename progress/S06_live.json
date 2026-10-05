@@ -1,7 +1,7 @@
 {
   "session": "S06",
-  "section": "\u2460 Why a framework",
-  "section_idx": 1,
+  "section": "Lab 6A",
+  "section_idx": 2,
   "sections_total": 10,
   "xp_total": 12,
   "active_minutes": 1,
@@ -12,6 +12,10 @@
     "lab6b": false,
     "lab6c": false
   },
-  "participant": null,
-  "updated_at": "2026-10-05T03:35:27.252742+00:00"
+  "participant": {
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
+  },
+  "updated_at": "2026-10-05T03:45:41.094196+00:00"
 }
