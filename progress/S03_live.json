@@ -1,7 +1,7 @@
 {
   "session": "S03",
-  "section": "\ud83c\udfdb\ufe0f ADR",
-  "section_idx": 7,
+  "section": "Sum-up",
+  "section_idx": 9,
   "sections_total": 10,
   "xp_total": 298,
   "active_minutes": 50,
@@ -17,5 +17,5 @@
     "github_user": "pythonclass09",
     "team": "D"
   },
-  "updated_at": "2026-10-05T06:03:10.336046+00:00"
+  "updated_at": "2026-10-05T06:08:15.260476+00:00"
 }
