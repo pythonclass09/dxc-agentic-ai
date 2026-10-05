@@ -1,12 +1,12 @@
 {
   "session": "S03",
-  "section": "\u2462 RAG",
-  "section_idx": 5,
+  "section": "\ud83c\udfc6 Boss Quiz",
+  "section_idx": 8,
   "sections_total": 10,
-  "xp_total": 94,
-  "active_minutes": 11,
-  "quiz_answered": 7,
-  "quiz_correct": 7,
+  "xp_total": 224,
+  "active_minutes": 14,
+  "quiz_answered": 20,
+  "quiz_correct": 19,
   "labs_self_reported": {
     "lab2a": true,
     "lab2b": false,
@@ -17,5 +17,5 @@
     "github_user": "pythonclass09",
     "team": "D"
   },
-  "updated_at": "2026-10-05T04:06:36.796175+00:00"
+  "updated_at": "2026-10-05T04:11:23.175612+00:00"
 }
