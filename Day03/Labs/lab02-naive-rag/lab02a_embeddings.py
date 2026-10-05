@@ -61,12 +61,7 @@ def cosine(a, b):
     # SKELETON:  float( np.dot(a, b) / ( np.linalg.norm(___) * np.linalg.norm(___) ) )
     # My prediction: score for ("locked out of account", "can't sign in") will be
     #        close to ____ and for ("locked out", "printer jammed") close to ____
-    a_arr = np.asarray(a, dtype=float)
-    b_arr = np.asarray(b, dtype=float)
-    denom = np.linalg.norm(a_arr) * np.linalg.norm(b_arr)
-    if denom == 0:
-        return 0.0
-    return float(np.dot(a_arr, b_arr) / denom)
+    return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b)))
 
 
 def top_k(query_vec, items, k=3):

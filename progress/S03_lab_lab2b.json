@@ -1,0 +1,50 @@
+{
+  "session": "S03",
+  "lab": "lab2b",
+  "title": "Lab 2B",
+  "folder": "lab02-naive-rag",
+  "participant": {
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
+  },
+  "submitted_at": "2026-10-05T05:22:05.311630+00:00",
+  "attempts": 1,
+  "passed": [],
+  "failed": [
+    {
+      "name": "test_challenge_4_chunking",
+      "msg": "NotImplementedError: TODO-4"
+    },
+    {
+      "name": "test_challenge_5_build_index",
+      "msg": "NotImplementedError: TODO-5"
+    },
+    {
+      "name": "test_challenge_6_search",
+      "msg": "NotImplementedError: TODO-5"
+    }
+  ],
+  "total": 3,
+  "stretch": {
+    "passed": [],
+    "failed": [
+      {
+        "name": "test_challenge_7_rag_prompt",
+        "msg": "NotImplementedError: TODO-7"
+      },
+      {
+        "name": "test_challenge_8_answer_with_rag",
+        "msg": "NotImplementedError: TODO-8"
+      },
+      {
+        "name": "test_challenge_9_results_show_grounding",
+        "msg": "AssertionError: Run for real: python Day03\\Labs\\lab02-naive-rag\\lab02c_rag.py"
+      }
+    ]
+  },
+  "evidence": {
+    "files": {},
+    "eval_runs": []
+  }
+}
