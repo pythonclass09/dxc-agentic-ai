@@ -1,12 +1,12 @@
 {
   "session": "S03",
-  "timestamp": "2026-10-05T04:21:46.995Z",
+  "timestamp": "2026-10-05T05:40:53.519Z",
   "participant": {
     "name": "Gowthami Minsala",
     "github_user": "pythonclass09",
     "team": "D"
   },
-  "xp_total": 249,
+  "xp_total": 298,
   "xp": {
     "tab_mm0": 1,
     "mm1": 2,
@@ -49,9 +49,18 @@
     "q_boss_8": 15,
     "q_boss_9": 15,
     "q_boss_6": 10,
-    "pass_lab2a": 15
+    "pass_lab2a": 15,
+    "tab_mm1": 1,
+    "tab_mm2": 1,
+    "tab_mm3": 1,
+    "mm2": 3,
+    "mm3": 3,
+    "sub_lab2b": 5,
+    "pass_lab2b": 15,
+    "sub_lab2c": 5,
+    "pass_lab2c": 15
   },
-  "active_minutes": 18,
+  "active_minutes": 44,
   "quiz": {
     "m1_0": {
       "correct": true,
@@ -141,12 +150,14 @@
   },
   "labs_self_reported": {
     "lab2a": true,
-    "lab2b": false,
-    "lab2c": false
+    "lab2b": true,
+    "lab2c": true
   },
-  "exit_ticket": {},
+  "exit_ticket": {
+    "confidence": 5
+  },
   "adr": {
     "adr002": {}
   },
-  "saved_at": "2026-10-05T04:21:47.005014+00:00"
+  "saved_at": "2026-10-05T05:40:53.529165+00:00"
 }

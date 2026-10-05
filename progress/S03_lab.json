@@ -5,13 +5,31 @@
     "github_user": "pythonclass09",
     "team": "D"
   },
-  "saved_at": "2026-10-05T04:21:47.005014+00:00",
+  "saved_at": "2026-10-05T05:40:53.529165+00:00",
   "labs": {
     "Lab 2A": {
       "passed": [
         "test_challenge_1_embed",
         "test_challenge_2_cosine",
         "test_challenge_3_top_k"
+      ],
+      "failed": [],
+      "total": 3
+    },
+    "Lab 2B": {
+      "passed": [
+        "test_challenge_4_chunking",
+        "test_challenge_5_build_index",
+        "test_challenge_6_search"
+      ],
+      "failed": [],
+      "total": 3
+    },
+    "Lab 2C": {
+      "passed": [
+        "test_kb_is_in_repo",
+        "test_experiment_numbers",
+        "test_experiment_conclusion"
       ],
       "failed": [],
       "total": 3
