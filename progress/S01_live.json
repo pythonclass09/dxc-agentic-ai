@@ -1,17 +1,17 @@
 {
   "session": "S01",
-  "section": "Lab C",
-  "section_idx": 6,
+  "section": "Wrap-up",
+  "section_idx": 8,
   "sections_total": 9,
-  "xp_total": 149,
-  "active_minutes": 14,
-  "quiz_answered": 13,
-  "quiz_correct": 13,
+  "xp_total": 289,
+  "active_minutes": 19,
+  "quiz_answered": 25,
+  "quiz_correct": 25,
   "labs_self_reported": {
     "labA": false,
     "labB": true,
-    "labC": false
+    "labC": true
   },
   "participant": null,
-  "updated_at": "2026-10-05T03:31:16.192962+00:00"
+  "updated_at": "2026-10-05T03:36:16.188036+00:00"
 }
