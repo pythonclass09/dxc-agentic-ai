@@ -44,7 +44,10 @@ def embed(client, text, dimensions=512):
     #   result = json.loads(response["body"].___())
     #   return result["___"]
     # My prediction: how many numbers will come back for one sentence? ____
-    raise NotImplementedError("TODO-1")
+    body = json.dumps({"inputText": text, "dimensions": dimensions, "normalize": True})
+    response = client.invoke_model(modelId=EMBED_MODEL, body=body)
+    result = json.loads(response["body"].read())
+    return result["embedding"]
 
 
 def cosine(a, b):
@@ -58,7 +61,12 @@ def cosine(a, b):
     # SKELETON:  float( np.dot(a, b) / ( np.linalg.norm(___) * np.linalg.norm(___) ) )
     # My prediction: score for ("locked out of account", "can't sign in") will be
     #        close to ____ and for ("locked out", "printer jammed") close to ____
-    raise NotImplementedError("TODO-2")
+    a_arr = np.asarray(a, dtype=float)
+    b_arr = np.asarray(b, dtype=float)
+    denom = np.linalg.norm(a_arr) * np.linalg.norm(b_arr)
+    if denom == 0:
+        return 0.0
+    return float(np.dot(a_arr, b_arr) / denom)
 
 
 def top_k(query_vec, items, k=3):
@@ -72,7 +80,9 @@ def top_k(query_vec, items, k=3):
     #        (3) keep only the first k and return them as {"id": ..., "score": ...}
     # Hint:  sorted(list, key=lambda x: x["score"], reverse=___) and list[:k]
     # My prediction: will the top match for "VPN keeps dropping" be a VPN article? ____
-    raise NotImplementedError("TODO-3")
+    scored = [{"id": item["id"], "score": cosine(query_vec, item["vector"])} for item in items]
+    scored.sort(key=lambda x: x["score"], reverse=True)
+    return scored[:k]
 
 
 PAIRS = [

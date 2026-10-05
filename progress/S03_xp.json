@@ -1,0 +1,151 @@
+{
+  "session": "S03",
+  "timestamp": "2026-10-05T04:12:17.389Z",
+  "participant": {
+    "name": "Gowthami Minsala",
+    "github_user": "pythonclass09",
+    "team": "D"
+  },
+  "xp_total": 234,
+  "xp": {
+    "tab_mm0": 1,
+    "mm1": 2,
+    "mm4": 3,
+    "flip_0": 1,
+    "flip_1": 1,
+    "flip_2": 1,
+    "flip_3": 1,
+    "flip_4": 1,
+    "flip_5": 1,
+    "q_m1_0": 5,
+    "q_m1_1": 5,
+    "q_m1_2": 10,
+    "q_m1_3": 10,
+    "sub_lab2a": 5,
+    "flip_6": 1,
+    "flip_7": 1,
+    "flip_8": 1,
+    "chunk": 3,
+    "flip_9": 1,
+    "flip_10": 1,
+    "flip_11": 1,
+    "flip_12": 1,
+    "flip_13": 1,
+    "flip_14": 1,
+    "q_m2_0": 10,
+    "q_m2_1": 10,
+    "q_m2_2": 15,
+    "cls_rft": 10,
+    "q_m3_0": 5,
+    "q_m3_1": 10,
+    "q_m3_2": 15,
+    "q_boss_0": 5,
+    "q_boss_1": 5,
+    "q_boss_2": 5,
+    "q_boss_3": 10,
+    "q_boss_4": 10,
+    "q_boss_5": 10,
+    "q_boss_7": 15,
+    "q_boss_8": 15,
+    "q_boss_9": 15,
+    "q_boss_6": 10
+  },
+  "active_minutes": 14,
+  "quiz": {
+    "m1_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "m1_1": {
+      "correct": true,
+      "level": "b"
+    },
+    "m1_2": {
+      "correct": true,
+      "level": "i"
+    },
+    "m1_3": {
+      "correct": true,
+      "level": "i"
+    },
+    "m2_0": {
+      "correct": true,
+      "level": "i"
+    },
+    "m2_1": {
+      "correct": true,
+      "level": "i"
+    },
+    "m2_2": {
+      "correct": true,
+      "level": "a"
+    },
+    "m3_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "m3_1": {
+      "correct": true,
+      "level": "i"
+    },
+    "m3_2": {
+      "correct": true,
+      "level": "a"
+    },
+    "boss_0": {
+      "correct": true,
+      "level": "b"
+    },
+    "boss_1": {
+      "correct": true,
+      "level": "b"
+    },
+    "boss_2": {
+      "correct": true,
+      "level": "b"
+    },
+    "boss_3": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_4": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_5": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_6": {
+      "correct": true,
+      "level": "i"
+    },
+    "boss_7": {
+      "correct": true,
+      "level": "a"
+    },
+    "boss_8": {
+      "correct": true,
+      "level": "a"
+    },
+    "boss_9": {
+      "correct": true,
+      "level": "a"
+    }
+  },
+  "boss": {
+    "answered": 10,
+    "correct": 10,
+    "of": 10
+  },
+  "labs_self_reported": {
+    "lab2a": true,
+    "lab2b": false,
+    "lab2c": false
+  },
+  "exit_ticket": {},
+  "adr": {
+    "adr002": {}
+  },
+  "saved_at": "2026-10-05T04:12:17.399827+00:00"
+}
