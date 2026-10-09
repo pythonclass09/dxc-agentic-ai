@@ -71,8 +71,7 @@ def build_agent(model, tools, middleware=None):
         middleware=middleware or []
     Use exactly these names. Then run:  python check.py 6a
     """
-    return None  # TODO-1: replace this line with: return create_agent(...)
-
+    return create_agent(model=model, tools=tools, system_prompt=SYSTEM_PROMPT, middleware=middleware or [])
 
 def ask(agent, question):
     """(built) Asks the agent one question and returns the answer, the tool names used, and the messages."""
@@ -107,7 +106,7 @@ def over_budget(model_calls, max_calls):
     Ask: has model_calls reached max_calls?  Use >=  (greater than or equal).
     Replace the line  'return False'  with ONE comparison. Then run:  python check.py 6b
     """
-    return False  # TODO-2: replace this line with one comparison
+    return model_calls >= max_calls
 
 
 @before_model
@@ -164,7 +163,7 @@ def describe_step(update):
             elif isinstance(m, AIMessage):
                 # TODO-3 (Lab 6C): the final answer. ONE line to write.
                 # Replace the word 'pass' with:  lines.append(f"✅ answer: {text_of(m)}")
-                pass  # TODO-3
+                lines.append(f"✅ answer: {text_of(m)}")  # TODO-3
             elif isinstance(m, ToolMessage):                            # a tool result came back
                 lines.append(f"👁️ result: {short(text_of(m))}")
     return lines
