@@ -87,6 +87,7 @@ python -m streamlit run app.py
 |---|---|---|
 | **AWS Bedrock (main)** | Default in class. Uses the keys in the course `.env`. | Real AI, real scores. |
 | **OpenAI (backup)** | Bedrock not working. Paste the key shared with you. | Real AI. |
+| **Azure AI Foundry** | Use a Foundry API key and OpenAI-compatible endpoint. | Enter the endpoint and key in the sidebar or set `AZURE_AI_FOUNDRY_API_KEY` and `AZURE_AI_FOUNDRY_ENDPOINT` in `.env`. |
 | **Offline** | No keys at all, or at home. | Stand-in models. Everything runs, but **numbers and wording will differ**, and *LLM-as-judge* is disabled. |
 
 > **Tip.** The sidebar shows a green dot (🟢 Live) when a real provider is connected and an orange dot (🟠 Offline) otherwise.
@@ -458,6 +459,7 @@ In the source table: **retrieval** = score from the search step. **final score**
 3. Choose a provider:
    - **No keys:** select **Offline** in the sidebar. Everything works, scores differ.
    - **OpenAI:** copy `.env.example` to `.env` in the lab folder and put your key after `OPENAI_API_KEY=` (or paste it in the sidebar).
+   - **Azure AI Foundry:** set `AZURE_AI_FOUNDRY_API_KEY` and `AZURE_AI_FOUNDRY_ENDPOINT` in `.env` (or enter them in the sidebar). Use your deployment's OpenAI-compatible endpoint, and set `AZURE_AI_FOUNDRY_CHAT_MODEL` and `AZURE_AI_FOUNDRY_EMBEDDING_MODEL` to models/deployments available there.
    - **AWS Bedrock:** put `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` (and `AWS_SESSION_TOKEN` if your key starts with `ASIA`) and `BEDROCK_SMALL_MODEL_ID` in `.env`, and enable the models in your AWS account. Region defaults to us-east-1.
 
 **To use the ideas on your own documents (work or portfolio)**

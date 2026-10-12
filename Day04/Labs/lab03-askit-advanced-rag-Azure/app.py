@@ -72,17 +72,24 @@ with st.sidebar:
     st.header("Connection")
     br_ok = bedrock_ready()
     env_key = os.getenv("OPENAI_API_KEY", "")
-    provider_label = st.radio("Provider", ["AWS Bedrock (main)", "OpenAI (backup)", "Offline"],
-                              index=0 if br_ok else (1 if env_key else 2),
+    foundry_key = os.getenv("AZURE_AI_FOUNDRY_API_KEY", "")
+    foundry_endpoint = os.getenv("AZURE_AI_FOUNDRY_ENDPOINT", "")
+    foundry_ready = bool(foundry_key and foundry_endpoint)
+    provider_options = ["AWS Bedrock (main)", "OpenAI (backup)", "Azure AI Foundry", "Offline"]
+    provider_index = 0 if br_ok else (2 if foundry_ready else (1 if env_key else 3))
+    provider_label = st.radio("Provider", provider_options,
+                              index=provider_index,
                               help="Bedrock uses the AWS keys and BEDROCK_SMALL_MODEL_ID in the course .env. "
-                                   "OpenAI is the backup: paste a key below. Offline = stand-in models, no API calls.")
+                                   "OpenAI and Azure AI Foundry use API keys. Offline = stand-in models, no API calls.")
     api_key, provider = "", "offline"
+    base_url = None
     if provider_label.startswith("AWS"):
         if br_ok:
             provider = "bedrock"
             st.caption("🟢 Live: AWS Bedrock")
         else:
-            st.error("AWS keys or BEDROCK_SMALL_MODEL_ID not found in .env. Using offline mode. Or switch to OpenAI.")
+            st.error("AWS keys or BEDROCK_SMALL_MODEL_ID not found in .env. Using offline mode. "
+                     "Or switch to OpenAI or Azure AI Foundry.")
     elif provider_label.startswith("OpenAI"):
         key_in = st.text_input("OpenAI API key", value="", type="password",
                                placeholder="Loaded from .env" if env_key else "sk-...")
@@ -92,6 +99,23 @@ with st.sidebar:
             st.caption("🟢 Live: OpenAI API (backup)")
         else:
             st.warning("Paste an OpenAI key. Using offline mode until then.")
+    elif provider_label.startswith("Azure"):
+        key_in = st.text_input("Azure AI Foundry API key", value="", type="password",
+                               placeholder="Loaded from .env" if foundry_key else "Paste your Foundry key")
+        endpoint_in = st.text_input(
+            "Azure AI Foundry endpoint",
+            value=foundry_endpoint,
+            placeholder="https://<resource>.services.ai.azure.com/models",
+            help="Use the OpenAI-compatible model inference endpoint from your Foundry deployment, "
+                 "usually ending in /models.",
+        )
+        api_key = key_in or foundry_key
+        base_url = endpoint_in.strip()
+        if api_key and base_url:
+            provider = "foundry"
+            st.caption("🟢 Live: Azure AI Foundry")
+        else:
+            st.warning("Enter an Azure AI Foundry API key and endpoint. Using offline mode until then.")
     if provider == "offline":
         st.caption("🟠 Offline mode: no API calls, stand-in models")
 
@@ -102,6 +126,18 @@ with st.sidebar:
         embed_model = config.DEFAULT_BEDROCK_EMBED
         st.caption(f"Embeddings: {embed_model}")
         price_note = "Verify at aws.amazon.com/bedrock/pricing"
+    elif provider == "foundry":
+        chat_model = st.text_input(
+            "Chat model/deployment",
+            value=os.getenv("AZURE_AI_FOUNDRY_CHAT_MODEL", "gpt-4o-mini"),
+            help="Enter the model name or deployment name exposed by this Foundry endpoint.",
+        )
+        embed_model = st.text_input(
+            "Embedding model/deployment",
+            value=os.getenv("AZURE_AI_FOUNDRY_EMBEDDING_MODEL", "text-embedding-3-small"),
+            help="Enter an embedding model/deployment available at this endpoint.",
+        )
+        price_note = "Set prices to match your Azure AI Foundry model deployment."
     else:
         chat_model = st.selectbox("Chat model", config.CHAT_MODEL_OPTIONS + ["Other..."])
         if chat_model == "Other...":
@@ -146,7 +182,7 @@ cfg = pipeline.Config("Current settings", ss.chunking, ss.chunk_size, ss.overlap
                       ss.metadata_filter, ss.rerank, ss.top_k, ss.guard, ss.guard_threshold)
 
 try:
-    llm = LLM(api_key or None, chat_model, embed_model, prices, ss.log, provider=provider)
+    llm = LLM(api_key or None, chat_model, embed_model, prices, ss.log, provider=provider, base_url=base_url)
 except Exception as e:
     st.error(f"Could not create the model client: {e}")
     st.stop()
@@ -158,7 +194,8 @@ DOCS = {"Preloaded AskIT KB": PRELOADED, "My uploaded files": UPLOADED, "Both": 
 
 def get_index(c: pipeline.Config, docs=None):
     docs = DOCS if docs is None else docs
-    key = (c.chunking, c.chunk_size, c.overlap, llm.provider, embed_model, tuple(d.doc_id for d in docs))
+    key = (c.chunking, c.chunk_size, c.overlap, llm.provider, llm.base_url, embed_model,
+           tuple(d.doc_id for d in docs))
     if key not in ss.indexes:
         ss.indexes[key] = pipeline.Index(chunk_documents(docs, c.chunking, c.chunk_size, c.overlap), llm)
     idx = ss.indexes[key]
@@ -171,9 +208,12 @@ def explain_error(e):
     text = f"{type(e).__name__}: {e}"
     low = text.lower()
     if any(w in low for w in ("unrecognizedclient", "security token", "invalidsignature", "invalidclienttokenid",
-                              "expiredtoken", "no credentials", "authenticationerror", "incorrect api key")):
+                              "expiredtoken", "no credentials")):
         hint = ("The keys were rejected. Check AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY (and AWS_SESSION_TOKEN if your key starts "
                 "with ASIA) in the course .env, then restart the app. Or switch Provider to Offline in the sidebar.")
+    elif any(w in low for w in ("authenticationerror", "incorrect api key", "invalid api key", "unauthorized", "401")):
+        hint = ("The API key was rejected. Check the key for the selected provider. For Azure AI Foundry, also verify "
+                "AZURE_AI_FOUNDRY_ENDPOINT and the model/deployment names in the sidebar or .env.")
     elif "accessdenied" in low or "not authorized" in low:
         hint = "This AWS user cannot use that model yet. Tell the trainer. Switch Provider to OpenAI (backup) or Offline meanwhile."
     elif "throttl" in low or "ratelimit" in low or "too many requests" in low:

@@ -102,8 +102,7 @@ def bar(tokens, tokens_per_block=500):
     Replace the line  'return ""'  with ONE line, for example:  return "█" * max(1, tokens // tokens_per_block)
     Then run:  python check.py 7a
     """
-    return ""  # TODO-1: replace this line with one line that returns the bar
-
+    return "█" * max(1, tokens // tokens_per_block)
 
 @before_model
 def context_meter(state, runtime):
@@ -131,7 +130,7 @@ def compaction_middleware(model):
         keep=("messages", KEEP_LAST_MESSAGES)
     Use exactly these names. Then run:  python check.py 7b
     """
-    return None  # TODO-2: replace this line with: return SummarizationMiddleware(...)
+    return SummarizationMiddleware(model=model, trigger=("tokens", COMPACT_AT_TOKENS), keep=("messages", KEEP_LAST_MESSAGES))
 
 
 # =============================================================================================
@@ -149,7 +148,7 @@ def remember(store, user_id, text):
         value      = {"text": text}
     Then run:  python check.py 7c
     """
-    return None  # TODO-3: replace this line with: store.put(...)
+    return store.put(namespace=("memories", user_id), key=uuid.uuid4().hex, value={"text": text})
 
 
 def recall(store, user_id):

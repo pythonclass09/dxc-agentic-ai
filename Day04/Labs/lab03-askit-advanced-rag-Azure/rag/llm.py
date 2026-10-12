@@ -1,6 +1,6 @@
 """Thin wrapper over the model provider that records tokens, cost and latency for every call.
-Providers: "bedrock" (AWS Bedrock: Nova chat + Titan embeddings, the course default), "openai" (backup) and
-"offline" (no keys: deterministic stand-ins so the app still runs)."""
+Providers: "bedrock" (AWS Bedrock: Nova chat + Titan embeddings, the course default), "openai",
+"foundry" (Azure AI Foundry's OpenAI-compatible endpoint) and "offline" (no keys: deterministic stand-ins)."""
 import hashlib, json, os, re, time
 from concurrent.futures import ThreadPoolExecutor
 from types import SimpleNamespace
@@ -51,12 +51,13 @@ def _extract_json(text):
 
 
 class LLM:
-    """provider: "bedrock" | "openai" | None. None = "openai" if an api_key is given, else offline."""
+    """provider: "bedrock" | "openai" | "foundry" | None. None picks OpenAI when a key is given."""
 
     def __init__(self, api_key=None, chat_model=None, embed_model=None, prices=None, log=None, cache_dir=None,
-                 provider=None):
+                 provider=None, base_url=None):
         self.provider = provider or ("openai" if api_key else "offline")
         self.offline = self.provider == "offline"
+        self.base_url = base_url.rstrip("/") if base_url else None
         if self.provider == "bedrock":
             chat_model = chat_model or os.getenv("BEDROCK_SMALL_MODEL_ID", DEFAULT_BEDROCK_MODEL)
             embed_model = embed_model or DEFAULT_BEDROCK_EMBED
@@ -70,15 +71,23 @@ class LLM:
         self.cache_dir = cache_dir or _DEFAULT_CACHE   # inside the lab folder, whatever the current folder is
         os.makedirs(self.cache_dir, exist_ok=True)
         self.client = None
-        if self.provider == "openai":
+        if self.provider in ("openai", "foundry"):
+            if self.provider == "foundry" and (not api_key or not self.base_url):
+                raise ValueError("Azure AI Foundry requires an API key and an OpenAI-compatible endpoint URL.")
             from openai import OpenAI
-            self.client = OpenAI(api_key=api_key)
+            client_options = {"api_key": api_key}
+            if self.base_url:
+                client_options["base_url"] = self.base_url
+            self.client = OpenAI(**client_options)
         elif self.provider == "bedrock":
             self.client = _bedrock_client(os.getenv("AWS_REGION", "us-east-1"))
 
     # ---------- embeddings (cached on disk: re-runs cost nothing) ----------
     def _cache_path(self):
         name = "offline" if self.offline else re.sub(r"[^A-Za-z0-9._-]", "_", self.embed_model)   # Windows: no ':' in file names
+        if self.provider == "foundry":
+            endpoint_id = hashlib.sha1(self.base_url.encode()).hexdigest()[:10]
+            name = f"foundry_{endpoint_id}_{name}"
         return os.path.join(self.cache_dir, f"emb_{name}.json")
 
     def embed(self, texts, op="embed"):

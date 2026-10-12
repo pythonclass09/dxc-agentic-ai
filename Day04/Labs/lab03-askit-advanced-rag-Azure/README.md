@@ -18,7 +18,7 @@ python -m streamlit run app.py
 ```
 (There is no virtual environment to activate. The `pip install` line installs everything this lab needs, including `pytest`.)
 The app opens at http://localhost:8501. **AWS Bedrock is the default**: it uses the same `.env` as the earlier labs (AWS keys + `BEDROCK_SMALL_MODEL_ID`). Nothing to configure.
-*Bedrock not working?* In the sidebar choose **OpenAI (backup)** and paste the key the trainer shares. *No keys at all?* **Offline** mode runs with stand-in models: good for exploring, but the numbers will differ.
+*Bedrock not working?* In the sidebar choose **OpenAI (backup)** and paste the key the trainer shares, or choose **Azure AI Foundry**. For Foundry, set `AZURE_AI_FOUNDRY_API_KEY` and `AZURE_AI_FOUNDRY_ENDPOINT` in `.env` (or enter them in the sidebar); use the OpenAI-compatible model inference endpoint from your deployment, commonly ending in `/models`. Set `AZURE_AI_FOUNDRY_CHAT_MODEL` and `AZURE_AI_FOUNDRY_EMBEDDING_MODEL` to model/deployment names supported by that endpoint. *No keys at all?* **Offline** mode runs with stand-in models: good for exploring, but the numbers will differ.
 
 ## The knowledge base (`data\kb\`, 23 articles)
 The 20 AskIT articles, plus three on purpose:
