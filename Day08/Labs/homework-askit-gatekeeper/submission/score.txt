@@ -1,0 +1,1 @@
+C:\AskIT\dxc-agentic-ai\Day08\Labs\homework-askit-gatekeeper\.venv\Scripts\python.exe: No module named pytest
