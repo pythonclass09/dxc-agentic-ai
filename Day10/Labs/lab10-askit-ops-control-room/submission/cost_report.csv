@@ -1,0 +1,2 @@
+batch,tickets,cost per ticket $,p50 ms,p95 ms,tokens in / ticket,tokens out / ticket,model calls / ticket,runs not ok
+#1 padded + huge results,5,0.0004396,3498,4033,11442,279,2.4,0
